@@ -8,6 +8,10 @@ const { buildSchema } = require('graphql');
 const { courses } = require('./data.json');
 
 // GrapqhQL Schema
+/*
+      tipo entero y con "!" indicamos que es obligatorio
+course(id: Int!): Course
+*/
 const schema = buildSchema(`
   type Query {
     course(id: Int!): Course
@@ -43,6 +47,7 @@ let getCourses = (args) => {
 }
 
 let updateCourseTopic = ({id, topic}) => {
+
   courses.map(course => {
     if (course.id === id) {
       course.topic = topic;
