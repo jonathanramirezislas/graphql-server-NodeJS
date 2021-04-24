@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const express_graphql = require('express-graphql');
+const { graphqlHTTP } = require('express-graphql');
 const { buildSchema } = require('graphql');
 
 // importing data
@@ -60,7 +60,7 @@ const root = {
 };
 
 // GraphQL endpoint
-app.use('/graphql', express_graphql({
+app.use('/graphql', graphqlHTTP({
   schema: schema,
   rootValue: root,
   graphiql: true
