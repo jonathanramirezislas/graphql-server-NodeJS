@@ -9,7 +9,8 @@ const { courses } = require('./data.json');
 
 // GrapqhQL Schema
 /*
-      tipo entero y con "!" indicamos que es obligatorio
+      tipo entero y con "!" indicamos que es obligatorio 
+                : Course es lo que se va a retornar
 course(id: Int!): Course
 */
 const schema = buildSchema(`
